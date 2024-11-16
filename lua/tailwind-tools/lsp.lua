@@ -1,5 +1,16 @@
 local M = {}
-
+function dump(o)
+   if type(o) == 'table' then
+      local s = '{ '
+      for k,v in pairs(o) do
+         if type(k) ~= 'number' then k = '"'..k..'"' end
+         s = s .. '['..k..'] = ' .. dump(v) .. ','
+      end
+      return s .. '} '
+   else
+      return tostring(o)
+   end
+end
 local log = require("tailwind-tools.log")
 local utils = require("tailwind-tools.utils")
 local state = require("tailwind-tools.state")
@@ -235,7 +246,9 @@ M.show_selection = function(sync)
   local s_row, s_col, e_row, e_col = utils.get_visual_range()
   local class_ranges = { { s_row, s_col, e_row, e_col } }
 
-  rplugin.expand_utilities({ class_ranges })
+  dump(class_ranges)
+
+  rplugin.expand_utilities({ class_ranges.value })
 end
 
 ---@param sync boolean

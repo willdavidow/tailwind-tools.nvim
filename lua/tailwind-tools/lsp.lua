@@ -235,7 +235,7 @@ M.show_selection = function(sync)
   local s_row, s_col, e_row, e_col = utils.get_visual_range()
   local class_ranges = { { s_row, s_col, e_row, e_col } }
 
-  utilities.expand_utilities({ class_ranges })
+  rplugin.expand_utilities({ class_ranges })
 end
 
 ---@param sync boolean

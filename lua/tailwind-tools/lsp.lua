@@ -247,8 +247,9 @@ M.show_selection = function(sync)
   local class_ranges = { { s_row, s_col, e_row, e_col } }
 
   dump(class_ranges)
+  dump(utilities)
 
-  expand_utilities({ class_ranges })
+  -- expand_utilities({ class_ranges })
 end
 
 ---@param sync boolean

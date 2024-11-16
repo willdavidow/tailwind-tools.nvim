@@ -241,7 +241,6 @@ M.sort_selection = function(sync)
 end
 
 M.show_selection = function(sync)
-  local utilities = rplugin.get_utilities()
   local bufnr = vim.api.nvim_get_current_buf()
   local s_row, s_col, e_row, e_col = utils.get_visual_range()
   local class_ranges = { { s_row, s_col, e_row, e_col } }

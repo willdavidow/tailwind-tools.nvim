@@ -248,7 +248,7 @@ M.show_selection = function(sync)
 
   dump(class_ranges)
 
-  utilities.expand_utilities({ class_ranges.value })
+  expand_utilities({ class_ranges })
 end
 
 ---@param sync boolean

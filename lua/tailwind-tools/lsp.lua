@@ -228,6 +228,14 @@ M.sort_selection = function(sync)
   sort_classes(class_ranges, bufnr, sync)
 end
 
+M.show_selection = function(sync)
+  local bufnr = vim.api.nvim_get_current_buf()
+  local s_row, s_col, e_row, e_col = utils.get_visual_range()
+  local class_ranges = { { s_row, s_col, e_row, e_col } }
+
+  vim.fn.TailwindExpandUtilities(class_ranges, bufnr, sync)
+end
+
 ---@param sync boolean
 M.sort_classes = function(sync)
   local bufnr = vim.api.nvim_get_current_buf()

@@ -246,7 +246,7 @@ M.show_selection = function(sync)
   local class_ranges = { { s_row, s_col, e_row, e_col } }
   local class_text = {}
 
-  for _, range in pairs(ranges) do
+  for _, range in pairs(class_ranges) do
     local start_row, start_col, end_row, end_col = unpack(range)
     local text = vim.api.nvim_buf_get_text(bufnr, start_row, start_col, end_row, end_col, {})
 

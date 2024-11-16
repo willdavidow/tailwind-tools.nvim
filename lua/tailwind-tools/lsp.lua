@@ -244,8 +244,16 @@ M.show_selection = function(sync)
   local bufnr = vim.api.nvim_get_current_buf()
   local s_row, s_col, e_row, e_col = utils.get_visual_range()
   local class_ranges = { { s_row, s_col, e_row, e_col } }
+  local class_text = {}
 
-  print(dump(class_ranges))
+  for _, range in pairs(ranges) do
+    local start_row, start_col, end_row, end_col = unpack(range)
+    local text = vim.api.nvim_buf_get_text(bufnr, start_row, start_col, end_row, end_col, {})
+
+    class_text[#class_text + 1] = table.concat(text, "\n")
+  end
+
+  print(class_text)
 
   -- expand_utilities({ class_ranges })
 end

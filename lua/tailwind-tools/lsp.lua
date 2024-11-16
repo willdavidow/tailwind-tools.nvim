@@ -253,7 +253,7 @@ M.show_selection = function(sync)
     class_text[#class_text + 1] = table.concat(text, "\n")
   end
 
-  print(class_text)
+  print(dump(class_text))
 
   -- expand_utilities({ class_ranges })
 end

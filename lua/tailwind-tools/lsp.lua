@@ -248,7 +248,7 @@ M.show_selection = function(sync)
 
   dump(class_ranges)
 
-  rplugin.expand_utilities({ class_ranges.value })
+  utilities.expand_utilities({ class_ranges.value })
 end
 
 ---@param sync boolean

@@ -245,8 +245,7 @@ M.show_selection = function(sync)
   local s_row, s_col, e_row, e_col = utils.get_visual_range()
   local class_ranges = { { s_row, s_col, e_row, e_col } }
 
-  dump(class_ranges)
-  dump(utilities)
+  print(class_ranges)
 
   -- expand_utilities({ class_ranges })
 end

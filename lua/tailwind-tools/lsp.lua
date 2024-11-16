@@ -253,7 +253,7 @@ M.show_selection = function(sync)
     class_text[#class_text + 1] = table.concat(text, "\n")
   end
 
-  expand_utilities({ class_text[1] })
+  rplugin.expand_utilities({ class_text[1] })
 end
 
 ---@param sync boolean

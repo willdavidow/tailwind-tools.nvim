@@ -6,6 +6,7 @@ local state = require("tailwind-tools.state")
 local config = require("tailwind-tools.config")
 local classes = require("tailwind-tools.classes")
 local filetypes = require("tailwind-tools.filetypes")
+local rplugin = require("tailwind-tools.rplugin")
 
 local color_events = {
   "BufEnter",
@@ -233,7 +234,7 @@ M.show_selection = function(sync)
   local s_row, s_col, e_row, e_col = utils.get_visual_range()
   local class_ranges = { { s_row, s_col, e_row, e_col } }
 
-  vim.fn.TailwindExpandUtilities(class_ranges, bufnr, sync)
+  rplugin.expand_utilities(class_ranges, bufnr, sync)
 end
 
 ---@param sync boolean
